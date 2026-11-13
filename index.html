@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>快速操作指南 Quick Start Guide</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f2f2f4;
+    color: #1a1a1a;
+  }
+  header {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 22px 16px;
+  }
+  header h1 { font-size: 20px; font-weight: 700; letter-spacing: 0.5px; }
+  header p { font-size: 13px; color: #bbb; margin-top: 6px; }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    position: sticky;
+    top: 0;
+    background: #f2f2f4;
+    z-index: 10;
+  }
+  .tabs button {
+    border: none;
+    border-radius: 999px;
+    padding: 9px 26px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #fff;
+    color: #333;
+    box-shadow: 0 1px 4px rgba(0,0,0,.12);
+    transition: background .2s, color .2s;
+  }
+  .tabs button.active { background: #111; color: #fff; }
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 14px 48px;
+    display: none;
+  }
+  .page.active { display: block; }
+  .page img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.14);
+    background: #fff;
+  }
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    padding: 20px 16px 32px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>快速操作指南&nbsp;&nbsp;Quick Start Guide</h1>
+  <p>Tivoli Audio &middot; MODEL THREE BT</p>
+</header>
+
+<nav class="tabs">
+  <button id="tab-zh" class="active" onclick="show('zh')">中文版</button>
+  <button id="tab-en" onclick="show('en')">English</button>
+</nav>
+
+<section id="page-zh" class="page active">
+  <img src="assets/guide-zh.png" alt="快速操作指南 中文版">
+</section>
+
+<section id="page-en" class="page">
+  <img src="assets/guide-en.png" alt="Quick Start Guide (English)">
+</section>
+
+<footer>Tivoli Audio MODEL THREE BT &middot; 快速操作指南 Quick Start Guide</footer>
+
+<script>
+  function show(lang) {
+    document.getElementById('page-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('page-en').classList.toggle('active', lang === 'en');
+    document.getElementById('tab-zh').classList.toggle('active', lang === 'zh');
+    document.getElementById('tab-en').classList.toggle('active', lang === 'en');
+  }
+</script>
+
+</body>
+</html>
